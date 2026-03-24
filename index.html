@@ -548,7 +548,8 @@
             font-weight: 600;
             letter-spacing: 1px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 30px;
+            border-radius: 30px;
             transition: 0.3s;
         }
 
@@ -571,11 +572,12 @@
             text-transform: uppercase;
         }
 
-        .footer-social-icons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+       .footer-social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 10px;
+    max-width: 90px; /* controls total width (adjust if needed) */
+}
 
         .footer-social-icons a {
             display: flex;
