@@ -135,6 +135,33 @@
         .social-bar i:hover { color: #ccc; }
 
 
+        /* LEFT FLOATING IMAGE CONTROL */
+.left-floating-img {
+    position: absolute;   /* stays fixed on screen */
+
+    /* POSITION CONTROL */
+    right: 20px;        /* move left/right */
+    bottom: 90px;      /* move up/down */
+
+    /* SIZE CONTROL */
+    width: 35px;       /* change width */
+    height: 400px;      /* keep aspect ratio */
+
+    /* OPTIONAL STYLING */
+    z-index: 9;      /* always on top */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect (optional) */
+.left-floating-img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
         /* --- CONTACT SECTION --- */
         .contact-section {
 
@@ -663,6 +690,13 @@
     <div class="hero-content">
         <h1>CONTACT <b>US</b></h1>
     </div>
+
+    <!-- LEFT FLOATING PNG -->
+    <img
+            src="https://raw.githubusercontent.com/vatsalvarma/Client-Project-/refs/heads/main/call%20watsapp%20and%20chat.png"
+            class="left-floating-img"
+            alt="Contact Icons"
+    />
 </section>
 
 <!-- CONTACT SECTION -->
