@@ -178,29 +178,16 @@
             color: var(--primary-green);
         }
 
-        .info-heading span.small-caps {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
+        /* TOP LEFT IMAGE IN CONTACT SECTION */
+.contact-img-top-left {
+    width: 240px;   /* increase size to match design */
+    height: 200px;
 
-        .info-heading h2 {
-            font-size: 55px;
-            font-weight: 600;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .info-heading h3 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
+    margin-bottom: 25px;   /* 🔥 THIS creates gap like design */
+}
 
         .info-desc {
-            color: var(--text-grey);
+            color: var(--primary-green);
             font-size: 13px;
             line-height: 1.6;
             margin-bottom: 40px;
@@ -700,12 +687,14 @@
 <!-- CONTACT SECTION -->
 <section class="contact-section">
     <!-- Left Side: Information -->
+
     <div class="contact-info">
-        <div class="info-heading">
-            <span class="small-caps">WE ARE ALWAYS</span>
-            <h2>READY</h2>
-            <h3>TO HELP YOU AND<br>ANSWER YOUR QUESTIONS</h3>
-        </div>
+
+        <img
+                src="https://raw.githubusercontent.com/vatsalvarma/Greensiri-Contact/refs/heads/main/We%20are%20always%20ready%20to%20help%20you%20and%20answer%20your%20questions%20(1).png"
+                class="contact-img-top-left"
+                alt="Decoration"
+        >
         <p class="info-desc">
             LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. CUM SANIT ACCUS MUS VALIDIBUS.
         </p>
