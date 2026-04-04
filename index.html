@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,11 +145,13 @@
             gap: 60px;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 80px 5% 80px 2%; /* top right bottom left */
             height: 100vh;
         }
 
         .contact-info {
             flex: 1;
+            position: relative;
         }
 
         .info-heading {
@@ -157,11 +160,45 @@
 
         /* TOP LEFT IMAGE IN CONTACT SECTION */
         .contact-img-top-left {
-            width: 270px;   /* increase size to match design */
-            height: 210px;
+    width: 270px;
+    height: 250px;
+    margin-bottom: 25px;
+    margin-left: 140px;
 
-            margin-bottom: 25px;   /* 🔥 THIS creates gap like design */
-        }
+    animation: floatImage 3s ease-in-out infinite alternate;
+}
+
+.contact-info::after {
+    content: "";
+    position: absolute;
+
+    /* 👇 adjust position under image */
+    top: 280px;
+    left: 190px;
+
+    width: 160px;
+    height: 30px;
+
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    filter: blur(6px);
+
+    animation: shadowPulse 3s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+/* Smooth floating up-down */
+@keyframes floatImage {
+    0%   { transform: translateY(0px); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes shadowPulse {
+    0%   { transform: scale(1.1); opacity: 0.25; }
+    100% { transform: scale(0.8); opacity: 0.1; }
+}
+
+
 
         .info-desc {
             color: var(--primary-green);
@@ -171,10 +208,25 @@
             max-width: 90%;
         }
 
+        .contact-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #111;
+            margin-top: 40px;
+
+            margin-left: 160px;
+        }
+
         .info-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+            gap: 24px 30px;
+            align-items: start;
+
+            margin-top: 20px;
+
+            margin-left: 100px;
         }
 
         .info-block h4 {
@@ -192,17 +244,19 @@
         }
 
         .social-links {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 32px);
             gap: 10px;
             margin-top: 5px;
+            justify-content: start;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border: 1px solid var(--primary-green);
             border-radius: 50%;
             color: var(--primary-green);
@@ -893,26 +947,24 @@
     <div class="contact-info">
 
         <img
-                src="https://raw.githubusercontent.com/vatsalvarma/Greensiri-Contact/refs/heads/main/We%20are%20always%20ready%20to%20help%20you%20and%20answer%20your%20questions%20(1).png"
+                src="https://i.ibb.co/HTvXtyPR/about-us.png"
                 class="contact-img-top-left"
                 alt="Decoration"
         >
-        <p class="info-desc">
-            LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. CUM SANIT ACCUS MUS VALIDIBUS.
-        </p>
+        <h3 class="contact-title">LAND TO LEGACY</h3>
 
         <div class="info-grid">
             <div class="info-block">
                 <h4>CALL CENTER</h4>
-                <p>+91 96-1112-5552<br>+91 96-1112-5552</p>
-            </div>
-            <div class="info-block">
-                <h4>OUR LOCATION</h4>
-                <p>204/1, 3rd Floor, OMKARA Building,<br>Nehru Nagar, International Airport Road,<br>Yelahanka, Bengaluru, Karnataka 560064</p>
+                <p>+91 96-1112-5552</p>
             </div>
             <div class="info-block">
                 <h4>E-MAIL</h4>
                 <p>info@greensiri.in</p>
+            </div>
+            <div class="info-block">
+                <h4>OUR LOCATION</h4>
+                <p>204/1, 3rd Floor, OMKARA Building,<br>Yelahanka, Bengaluru, Karnataka 560064</p>
             </div>
             <div class="info-block">
                 <h4>SOCIAL MEDIA LINKS</h4>
@@ -922,6 +974,7 @@
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
                     <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
