@@ -64,7 +64,7 @@
         }
 
         .logo-container img {
-            height: 40px;   /* control size */
+            height: 50px;   /* control size */
             width: auto;
             display: block;
         }
@@ -87,6 +87,17 @@
         .nav-links li a:hover, .nav-links li a.active {
             color: #ddd;
 
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: #fff;
+            font-size: 22px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
         }
 
         /* Hero Content */
@@ -852,6 +863,106 @@
             pointer-events: none;
         }
 
+        /* ==================== GLOBAL RESPONSIVE ENHANCEMENTS ==================== */
+        /* Phones & small tablets */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+                background-position: center;
+            }
+            .navbar {
+                padding: 18px 6%;
+            }
+            .nav-links {
+                gap: 12px;
+            }
+            .nav-links li a {
+                font-size: 12px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+                margin-right: 0;
+            }
+            .social-bar {
+                right: 12px;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                padding: 48px 6%;
+                height: auto;
+            }
+            .contact-form {
+                margin-top: 32px;
+            }
+            .contact-img-top-left {
+                width: 210px;
+                height: 190px;
+                margin-left: 0;
+            }
+
+            .hamburger { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 68px;
+                right: 6%;
+                background: rgba(0, 0, 0, 0.85);
+                flex-direction: column;
+                gap: 14px;
+                padding: 18px;
+                border-radius: 10px;
+                box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+                display: none;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li a { color: #fff; font-size: 14px; }
+        }
+
+        /* Large desktops / QHD / 4K */
+        @media (min-width: 1920px) {
+            .navbar {
+                padding: 36px 8%;
+            }
+            .hero-content h1 {
+                font-size: 88px;
+            }
+            .contact-section {
+                max-width: 1700px;
+                gap: 120px;
+                padding: 120px 8%;
+            }
+            .contact-img-top-left {
+                width: 340px;
+                height: 320px;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .hero-section {
+                height: 95vh;
+            }
+            .hero-content h1 {
+                font-size: 104px;
+                letter-spacing: 3px;
+            }
+            .contact-section {
+                max-width: 2000px;
+                gap: 160px;
+                padding: 140px 10%;
+            }
+            .contact-img-top-left {
+                width: 380px;
+                height: 360px;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 17px;
+            }
+            button[type="submit"] {
+                font-size: 18px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -925,9 +1036,11 @@
     <nav class="navbar">
         <div class="logo-container">
             <a href="https://vatsalvarma.github.io/GREENSIRI---prbxxxx/">
-            <img src="https://raw.githubusercontent.com/vatsalvarma/Client-Project-/refs/heads/main/Asset%2011X.png" alt="Greensiri Logo">
+                <img src="https://raw.githubusercontent.com/vatsalvarma/Client-Project-/refs/heads/main/Asset%2011X.png" alt="Greensiri Logo">
+            </a>
         </div>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="https://vatsalvarma.github.io/GREENSIRI---prbxxxx/">HOME</a></li>
             <li><a href="https://vatsalvarma.github.io/TarniFarms/">FARMS</a></li>
             <li><a href="https://vatsalvarma.github.io/Greensiri-Residential-Coming-soon/">RESIDENTIALS</a></li>
@@ -1143,6 +1256,17 @@
                 item.classList.toggle('active');
             });
         });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('open'));
+            });
+        }
     });
 </script>
 </body>
