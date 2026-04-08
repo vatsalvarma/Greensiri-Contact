@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +94,7 @@
             display: none;
             background: none;
             border: 1px solid rgba(255,255,255,0.6);
+            
             color: #fff;
             font-size: 22px;
             padding: 6px 10px;
@@ -488,8 +490,8 @@
             padding: 0 25px 25px 25px;
         }
 
-        /* --- FOOTER --- */
-           footer {
+                /* --- Footer --- */
+        footer {
             background-color: #0b0b0b;
             color: white;
             padding: 60px 8%;
@@ -646,6 +648,7 @@
         .footer-social-icons a:hover {
             background: #fff;
             color: #000;
+            box-shadow: 0 0 0 1.5px #fff;
         }
 
         .footer-bottom {
@@ -695,6 +698,118 @@
             }
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .contact-title {
+        margin-left: 0;          /* remove big shift */
+        text-align: center;      /* center align */
+        width: 100%;
+        display: block;
+    }
+
+    .contact-info::after {
+        display: none;   /* ❌ removes shadow */
+    }
+
+
+    .info-grid {
+        margin-left: 0;                 /* remove shift */
+        grid-template-columns: 1fr;     /* already 1 column */
+        justify-items: center;          /* center grid items */
+        text-align: center;             /* center text */
+    }
+
+    .info-block {
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-block p {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;        /* center icons */
+    }
+
+            footer {
+                padding: 44px 28px 22px;
+                 height: auto;
+                margin-top: 60px;
+                padding: 40px 28px 22px;
+            }
+            .footer-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                padding-bottom: 22px;
+                gap: 30px;
+                padding-bottom: 60px;
+            }
+            .footer-col {
+                width: 100%;
+                max-width: 360px;
+                max-width: 380px;
+                border-right: none;
+                border-bottom: none;
+                padding: 0;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-col:first-child {
+                display: none;
+                display: flex;
+                margin-bottom: 2px;
+            }
+
+            .footer-bottom {
+        margin-top: 80px;         /* reduce space above copyright */
+        padding-top: 10px;
+    }
+
+            .footer-col:nth-child(1),
+            .footer-col:nth-child(2) {
+                align-items: center;
+                text-align: center;
+            }
+            .footer-bold {
+                font-size: 12px;
+                letter-spacing: 0.04em;
+            }
+            .footer-text {
+                margin-top: 8px;
+                font-size: 10px;
+                line-height: 1.75;
+                white-space: normal;
+            }
+            .footer-contact-item {
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+            .subscribe-form {
+                width: 100%;
+                max-width: 190px;
+                margin: 0 auto;
+            }
+            .footer-subscribe h5,
+            .footer-social h5 {
+                margin-bottom: 12px;
+            }
+            .subscribe-note {
+                white-space: normal;
+                text-align: center;
+                max-width: 240px;
+                margin-top: 8px;
+            }
+            .footer-social-icons {
+                gap: 10px;
+            }
+            .footer-bottom {
+                margin-top: 0;
+                padding-top: 0;
+                border-top: none;
+                font-size: 10px;
+                line-height: 1.5;
             }
         }
 
@@ -1199,6 +1314,8 @@
     </div>
 </section>
 
+
+<!-- --- Footer --- -->
 <footer>
     <div class="footer-grid">
         <div class="footer-col">
@@ -1211,14 +1328,15 @@
         </div>
 
         <div class="footer-col">
-            <div class="footer-contact-item">
+            <a href="tel:+919511125552" class="footer-contact-item" style="color: white; text-decoration: none;">
                 <i class="fa-solid fa-phone"></i>
-                +91 91192 5552
-            </div>
-            <div class="footer-contact-item">
+                +91 95111 25552
+            </a>
+            <a href="mailto:contact@greensiri.in" class="footer-contact-item"
+               style="color: white; text-decoration: none;">
                 <i class="fa-regular fa-envelope"></i>
                 contact@greensiri.in
-            </div>
+            </a>
         </div>
 
         <div class="footer-col">
@@ -1226,15 +1344,16 @@
                 <img src="https://raw.githubusercontent.com/vatsalvarma/Client-Project-/refs/heads/main/Asset%2011X.png"
                      class="footer-logo">
             </div>
-            <p class="footer-tagline">
-            </p>
+            <p class="footer-tagline"></p>
         </div>
 
         <div class="footer-col footer-subscribe">
             <h5>DO YOU HAVE ANY QUERY?</h5>
             <form class="subscribe-form">
-                <input type="email" placeholder="Email@greensiri.com">
-                <button type="button">SUBSCRIBE</button>
+                <input type="email" placeholder="example@email.com" required
+                       oninvalid="this.setCustomValidity('please enter valid email address')"
+                       oninput="this.setCustomValidity('')">
+                <button type="submit">SUBSCRIBE</button>
             </form>
             <div class="subscribe-note">
                 PLEASE FEEL FREE TO SHARE ANY QUERIES YOU HAVE
@@ -1244,27 +1363,32 @@
         <div class="footer-col footer-social">
             <h5>SOCIAL MEDIA LINKS</h5>
             <div class="footer-social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/greensiriproperties" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/greensiri_properties" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Greensiri" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://in.pinterest.com/greensiriproperties" target="_blank"><i
+                        class="fa-brands fa-pinterest-p"></i></a>
+                <a href="https://www.linkedin.com/company/greensiri-infra-llp/posts/?feedView=all"
+                   target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://wa.me/919511125552?text=" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
 
     <div class="footer-bottom">
         <p>
-            © Copyright 2026
+            &copy; Copyright 2026
             <span class="highlight">GREENSIRI PROPERTIES</span>.
             All Rights Reserved |
-            <a href="#">Privacy Policy</a> |
             Website Design by
             <span class="highlight">PRIZMABRIXX</span>
         </p>
     </div>
 </footer>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1292,3 +1416,4 @@
 </script>
 </body>
 </html>
+
