@@ -8,6 +8,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1238,6 +1239,52 @@
         height: 100vh;
     }
 }
+
+           /* ── 2560px (QHD / 4K) ── */
+        @media (min-width: 2560px) {
+
+            /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 85px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo-container img {
+            height: 50px;   /* control size */
+            width: auto;
+            display: block;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 53px;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: #ddd;
+
+        }
+
+        }
+
+
 
     </style>
 </head>
